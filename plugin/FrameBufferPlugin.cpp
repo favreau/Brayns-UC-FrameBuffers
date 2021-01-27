@@ -101,13 +101,25 @@ Response FrameBufferPlugin::_version() const
 extern "C" ExtensionPlugin *brayns_plugin_create(int argc, char **argv)
 {
     PLUGIN_INFO << std::endl;
-    PLUGIN_INFO << "_|_|_|    _|                      _|            _|    _|            _|            " << std::endl;
-    PLUGIN_INFO << "_|    _|  _|    _|_|_|    _|_|_|  _|  _|        _|    _|    _|_|    _|    _|_|    " << std::endl;
-    PLUGIN_INFO << "_|_|_|    _|  _|    _|  _|        _|_|          _|_|_|_|  _|    _|  _|  _|_|_|_|  " << std::endl;
-    PLUGIN_INFO << "_|    _|  _|  _|    _|  _|        _|  _|        _|    _|  _|    _|  _|  _|        " << std::endl;
-    PLUGIN_INFO << "_|_|_|    _|    _|_|_|    _|_|_|  _|    _|      _|    _|    _|_|    _|    _|_|_|  " << std::endl;
+
+    PLUGIN_INFO << "_|_|_|_|                                                    _|                      _|_|      _|_|                     "
+                   "           "
+                << std::endl;
+    PLUGIN_INFO << "_|        _|  _|_|    _|_|_|  _|_|_|  _|_|      _|_|        _|_|_|    _|    _|    _|        _|        _|_|    _|  _|_| "
+                   "   _|_|_|  "
+                << std::endl;
+    PLUGIN_INFO << "_|_|_|    _|_|      _|    _|  _|    _|    _|  _|_|_|_|      _|    _|  _|    _|  _|_|_|_|  _|_|_|_|  _|_|_|_|  _|_|     "
+                   " _|_|      "
+                << std::endl;
+    PLUGIN_INFO << "_|        _|        _|    _|  _|    _|    _|  _|            _|    _|  _|    _|    _|        _|      _|        _|       "
+                   "     _|_|  "
+                << std::endl;
+    PLUGIN_INFO << "_|        _|          _|_|_|  _|    _|    _|    _|_|_|      _|_|_|      _|_|_|    _|        _|        _|_|_|  _|       "
+                   " _|_|_|    "
+                << std::endl;
+
     PLUGIN_INFO << std::endl;
-    PLUGIN_INFO << "Initializing Black Hole plug-in (version " << PLUGIN_VERSION << ")" << std::endl;
+    PLUGIN_INFO << "Initializing Frame Buffers plug-in (version " << PLUGIN_VERSION << ")" << std::endl;
     PLUGIN_INFO << std::endl;
 
     return new FrameBufferPlugin();
