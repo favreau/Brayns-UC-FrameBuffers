@@ -39,7 +39,7 @@ inline vec3f AmbientOcclusionRenderer_shadeRay(const uniform AmbientOcclusionRen
         return make_vec3f(0.f);
 
     DifferentialGeometry dg;
-    postIntersect(self->super.model, dg, ray, DG_NS | DG_NG | DG_NORMALIZE | DG_FACEFORWARD | DG_MATERIALID | DG_COLOR | DG_TEXCOORD);
+    postIntersect(self->super.model, dg, ray, DG_NS | DG_NG | DG_NORMALIZE | DG_FACEFORWARD);
 
     // init TEA RNG //
     uniform FrameBuffer* uniform fb = self->super.fb;
@@ -67,8 +67,7 @@ inline vec3f AmbientOcclusionRenderer_shadeRay(const uniform AmbientOcclusionRen
             hits++;
     }
 
-    float diffuse = absf(dot(N, ray.dir));
-    const vec3f color = superColor * make_vec3f(diffuse * (1.0f - hits / (float)sampleCnt));
+    const vec3f color = superColor * make_vec3f(1.0f - hits / (float)sampleCnt);
     sample.alpha = 1.f;
 
     return color;

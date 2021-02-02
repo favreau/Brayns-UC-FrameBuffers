@@ -87,8 +87,6 @@ void FrameBufferPlugin::init()
 
     engine.addRendererType("raycast_Ng");
     engine.addRendererType("raycast_Ns");
-
-    _api->getParametersManager().getRenderingParameters().setCurrentRenderer("albedo");
 }
 
 Response FrameBufferPlugin::_version() const
